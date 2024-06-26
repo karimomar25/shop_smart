@@ -19,9 +19,11 @@ class HomeView extends StatelessWidget {
             ),
             ElevatedButton(onPressed: () {}, child: Text("Hello World")),
             SwitchListTile(
+                title: Text(
+                    themeProvider.getIsDarkTheme ? "Dark Mode" : "Light Mode"),
                 value: themeProvider.getIsDarkTheme,
                 onChanged: (value) {
-                  themeProvider.setDarkTheme(value);
+                  themeProvider.setDarkTheme(themeValue: value);
                 })
           ],
         ),
