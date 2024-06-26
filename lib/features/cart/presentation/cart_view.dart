@@ -11,7 +11,7 @@ class CartView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return isEmpty
-        ? Scaffold(
+        ? const Scaffold(
             body: EmptyBagWidget(
               imagePath: Assets.assetsImagesBagShoppingBasket,
               title: "Your cart is empty",
@@ -21,7 +21,7 @@ class CartView extends StatelessWidget {
             ),
           )
         : Scaffold(
-            bottomSheet: CartBottomSheetWidget(),
+            bottomSheet: const CartBottomSheetWidget(),
             appBar: AppBar(
               leading: Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -41,7 +41,7 @@ class CartView extends StatelessWidget {
             body: ListView.builder(
               itemCount: 10,
               itemBuilder: (context, index) {
-                return CartWidget();
+                return const CartWidget();
               },
             ),
           );
