@@ -5,6 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:shop_smart/core/widgets/subtitle_text.dart';
 import 'package:shop_smart/core/widgets/title_text.dart';
+import 'package:shop_smart/features/inner_views/product_details/product_details_view.dart';
+import 'package:shop_smart/features/inner_views/product_details/widgets/heart_btn.dart';
+import 'package:short_navigation/short_navigation.dart';
 
 import '../../consts/app_constants.dart';
 
@@ -23,7 +26,7 @@ class _ProductWidgetState extends State<ProductWidget> {
       padding: const EdgeInsets.all(0.0),
       child: GestureDetector(
         onTap: () {
-          log("ToDo add the navigate to the product details screen");
+          Go.to(ProductDetailsView());
         },
         child: Column(
           children: [
@@ -54,7 +57,11 @@ class _ProductWidgetState extends State<ProductWidget> {
                     flex: 2,
                     child: IconButton(
                       onPressed: () {},
-                      icon: const Icon(IconlyLight.heart),
+                      icon: IconButton(
+                          onPressed: () {},
+                          icon: HeartButtonWidget(
+                            size: 28,
+                          )),
                     ),
                   ),
                 ],
@@ -86,7 +93,10 @@ class _ProductWidgetState extends State<ProductWidget> {
                         splashColor: Colors.red,
                         child: const Padding(
                           padding: EdgeInsets.all(6.0),
-                          child: Icon(Icons.add_shopping_cart_outlined),
+                          child: Icon(
+                            Icons.add_shopping_cart_outlined,
+                            size: 20,
+                          ),
                         ),
                       ),
                     ),

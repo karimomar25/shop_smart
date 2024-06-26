@@ -53,10 +53,8 @@ class _SearchViewState extends State<SearchView> {
                   prefixIcon: const Icon(Icons.search),
                   suffixIcon: GestureDetector(
                     onTap: () {
-                      setState(() {
-                        FocusScope.of(context).unfocus();
-                        searchTextController.clear();
-                      });
+                      FocusScope.of(context).unfocus();
+                      searchTextController.clear();
                     },
                     child: const Icon(
                       Icons.clear,

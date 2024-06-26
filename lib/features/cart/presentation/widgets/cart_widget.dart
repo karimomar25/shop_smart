@@ -5,6 +5,7 @@ import 'package:shop_smart/consts/app_constants.dart';
 import 'package:shop_smart/core/widgets/subtitle_text.dart';
 import 'package:shop_smart/core/widgets/title_text.dart';
 import 'package:shop_smart/features/cart/presentation/widgets/quantity_btm_sheet.dart';
+import 'package:shop_smart/features/inner_views/product_details/widgets/heart_btn.dart';
 
 class CartWidget extends StatelessWidget {
   const CartWidget({super.key});
@@ -52,11 +53,10 @@ class CartWidget extends StatelessWidget {
                               ),
                             ),
                             IconButton(
-                              onPressed: () {},
-                              icon: const Icon(
-                                IconlyLight.heart,
-                              ),
-                            ),
+                                onPressed: () {},
+                                icon: HeartButtonWidget(
+                                  size: 30,
+                                )),
                           ],
                         ),
                       ],

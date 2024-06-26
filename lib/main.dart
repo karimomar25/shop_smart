@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:shop_smart/consts/theme_data.dart';
 import 'package:shop_smart/core/root_view.dart';
 import 'package:shop_smart/providers/theme_provider.dart';
+import 'package:short_navigation/short_navigation.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
       ],
       child: Consumer<ThemeProvider>(builder: (context, themeProvider, child) {
         return MaterialApp(
+          navigatorKey: Go.navigatorKey,
           theme: Styles.themeData(
               isDarkTheme: themeProvider.getIsDarkTheme, context: context),
           home: const RootView(),
