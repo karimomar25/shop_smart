@@ -17,7 +17,7 @@ class HomeView extends StatelessWidget {
               "Hello World",
               style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
             ),
-            ElevatedButton(onPressed: () {}, child: Text("Hello World")),
+            ElevatedButton(onPressed: () {}, child: const Text("Hello World")),
             SwitchListTile(
                 title: Text(
                     themeProvider.getIsDarkTheme ? "Dark Mode" : "Light Mode"),
