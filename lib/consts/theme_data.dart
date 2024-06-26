@@ -4,20 +4,55 @@ import 'package:shop_smart/consts/app_colors.dart';
 class Styles {
   static ThemeData themeData(
       // ignore: non_constant_identifier_names
-      {required bool IsDarkTheme,
+      {required bool isDarkTheme,
       required BuildContext context}) {
     return ThemeData(
-        scaffoldBackgroundColor: IsDarkTheme
+        scaffoldBackgroundColor: isDarkTheme
             ? AppColors.darkScaffoldColor
             : AppColors.lightScaffoldColor,
-        cardColor: IsDarkTheme
+        cardColor: isDarkTheme
             ? const Color.fromARGB(255, 13, 6, 37)
             : AppColors.lightCardColor,
-        brightness: IsDarkTheme ? Brightness.dark : Brightness.light,
+        brightness: isDarkTheme ? Brightness.dark : Brightness.light,
         appBarTheme: AppBarTheme(
-            backgroundColor: IsDarkTheme
+            iconTheme: IconThemeData(
+              color: isDarkTheme ? Colors.white : Colors.black,
+            ),
+            backgroundColor: isDarkTheme
                 ? AppColors.darkScaffoldColor
                 : AppColors.lightScaffoldColor,
-            elevation: 0));
+            elevation: 0),
+        inputDecorationTheme: InputDecorationTheme(
+          filled: true,
+          contentPadding: const EdgeInsets.all(10),
+          enabledBorder: OutlineInputBorder(
+            borderSide: const BorderSide(
+              width: 1,
+              color: Colors.transparent,
+            ),
+            borderRadius: BorderRadius.circular(12),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderSide: BorderSide(
+              width: 1,
+              color: isDarkTheme ? Colors.white : Colors.black,
+            ),
+            borderRadius: BorderRadius.circular(12),
+          ),
+          errorBorder: OutlineInputBorder(
+            borderSide: BorderSide(
+              width: 1,
+              color: Theme.of(context).colorScheme.error,
+            ),
+            borderRadius: BorderRadius.circular(12.0),
+          ),
+          focusedErrorBorder: OutlineInputBorder(
+            borderSide: BorderSide(
+              width: 1,
+              color: Theme.of(context).colorScheme.error,
+            ),
+            borderRadius: BorderRadius.circular(12.0),
+          ),
+        ));
   }
 }

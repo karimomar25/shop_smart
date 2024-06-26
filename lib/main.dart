@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
       child: Consumer<ThemeProvider>(builder: (context, themeProvider, child) {
         return MaterialApp(
           theme: Styles.themeData(
-              IsDarkTheme: themeProvider.getIsDarkTheme, context: context),
+              isDarkTheme: themeProvider.getIsDarkTheme, context: context),
           home: const RootView(),
         );
       }),

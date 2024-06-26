@@ -1,0 +1,19 @@
+import 'package:flutter/material.dart';
+import 'package:shimmer/shimmer.dart';
+import 'package:shop_smart/core/widgets/title_text.dart';
+
+class AppNameTextWidget extends StatelessWidget {
+  const AppNameTextWidget({super.key, this.fontSize});
+  final double? fontSize;
+  @override
+  Widget build(BuildContext context) {
+    return Shimmer.fromColors(
+        period: Duration(seconds: 22),
+        baseColor: Colors.red,
+        highlightColor: Colors.purple,
+        child: TitlesTextWidget(
+          label: "Shop Smart",
+          fontSize: fontSize ?? 20,
+        ));
+  }
+}

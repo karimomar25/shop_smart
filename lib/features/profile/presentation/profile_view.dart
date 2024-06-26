@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shop_smart/consts/assets.dart';
+import 'package:shop_smart/core/widgets/app_name_text_widget.dart';
 import 'package:shop_smart/core/widgets/subtitle_text.dart';
 import 'package:shop_smart/core/widgets/title_text.dart';
 import 'package:shop_smart/features/profile/presentation/widgets/custom_list_tile.dart';
@@ -18,7 +19,9 @@ class ProfileView extends StatelessWidget {
           padding: const EdgeInsets.all(8.0),
           child: Image.asset(Assets.assetsImagesBagShoppingCart),
         ),
-        title: const Text("Profile screen"),
+        title: const AppNameTextWidget(
+          fontSize: 20,
+        ),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
