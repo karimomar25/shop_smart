@@ -1,7 +1,9 @@
 import 'package:dynamic_height_grid_view/dynamic_height_grid_view.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:shop_smart/core/consts/assets.dart';
 import 'package:shop_smart/core/models/product_model.dart';
+import 'package:shop_smart/core/providers/products_provider.dart';
 import 'package:shop_smart/core/widgets/product_widget.dart';
 import 'package:shop_smart/core/widgets/title_text.dart';
 
@@ -29,6 +31,8 @@ class _SearchViewState extends State<SearchView> {
 
   @override
   Widget build(BuildContext context) {
+    // create instance of our product provider
+    final productsProvider = Provider.of<ProductsProvider>(context);
     return GestureDetector(
       onTap: () {
         FocusScope.of(context).unfocus();
@@ -80,12 +84,12 @@ class _SearchViewState extends State<SearchView> {
                     crossAxisSpacing: 12,
                     builder: (context, index) {
                       return ProductWidget(
-                        image: ProductModel.products[index].productImage,
-                        price: ProductModel.products[index].productPrice,
-                        title: ProductModel.products[index].productTitle,
+                        // give the value of the prodcutId to equal the
+                        porductId: productsProvider.getProduct[index].productId,
                       );
                     },
-                    itemCount: ProductModel.products.length,
+                    // give the length to the gridview from the products list which is in our provider
+                    itemCount: productsProvider.getProduct.length,
                     crossAxisCount: 2),
               ),
             ],

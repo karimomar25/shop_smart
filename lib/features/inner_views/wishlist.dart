@@ -1,6 +1,8 @@
 import 'package:dynamic_height_grid_view/dynamic_height_grid_view.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:shop_smart/core/consts/assets.dart';
+import 'package:shop_smart/core/providers/products_provider.dart';
 import 'package:shop_smart/core/widgets/product_widget.dart';
 import 'package:shop_smart/core/widgets/title_text.dart';
 import 'package:shop_smart/features/cart/presentation/widgets/empty_bag.dart';
@@ -8,9 +10,11 @@ import 'package:shop_smart/features/cart/presentation/widgets/empty_bag.dart';
 class WishlistView extends StatelessWidget {
   static const routName = "/WishlistScreen";
   const WishlistView({super.key});
-  final bool isEmpty = true;
+  final bool isEmpty = false;
   @override
   Widget build(BuildContext context) {
+    final productsProvider = Provider.of<ProductsProvider>(context);
+
     return isEmpty
         ? const Scaffold(
             body: EmptyBagWidget(
@@ -42,9 +46,11 @@ class WishlistView extends StatelessWidget {
               mainAxisSpacing: 12,
               crossAxisSpacing: 12,
               builder: (context, index) {
-                return const ProductWidget();
+                return ProductWidget(
+                  porductId: productsProvider.getProduct[index].productId,
+                );
               },
-              itemCount: 200,
+              itemCount: productsProvider.getProduct.length,
               crossAxisCount: 2,
             ),
           );

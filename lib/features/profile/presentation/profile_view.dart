@@ -9,7 +9,7 @@ import 'package:shop_smart/features/auth/login.dart';
 import 'package:shop_smart/features/inner_views/viewed_recently.dart';
 import 'package:shop_smart/features/inner_views/wishlist.dart';
 import 'package:shop_smart/features/profile/presentation/widgets/custom_list_tile.dart';
-import 'package:shop_smart/providers/theme_provider.dart';
+import 'package:shop_smart/core/providers/theme_provider.dart';
 import 'package:short_navigation/short_navigation.dart';
 
 class ProfileView extends StatelessWidget {
