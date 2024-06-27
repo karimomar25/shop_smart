@@ -1,6 +1,7 @@
 import 'package:dynamic_height_grid_view/dynamic_height_grid_view.dart';
 import 'package:flutter/material.dart';
 import 'package:shop_smart/core/consts/assets.dart';
+import 'package:shop_smart/core/models/product_model.dart';
 import 'package:shop_smart/core/widgets/product_widget.dart';
 import 'package:shop_smart/core/widgets/title_text.dart';
 
@@ -78,9 +79,13 @@ class _SearchViewState extends State<SearchView> {
                     mainAxisSpacing: 12,
                     crossAxisSpacing: 12,
                     builder: (context, index) {
-                      return const ProductWidget();
+                      return ProductWidget(
+                        image: ProductModel.products[index].productImage,
+                        price: ProductModel.products[index].productPrice,
+                        title: ProductModel.products[index].productTitle,
+                      );
                     },
-                    itemCount: 200,
+                    itemCount: ProductModel.products.length,
                     crossAxisCount: 2),
               ),
             ],

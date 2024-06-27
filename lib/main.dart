@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shop_smart/core/consts/theme_data.dart';
 import 'package:shop_smart/core/root_view.dart';
-import 'package:shop_smart/features/auth/login.dart';
-import 'package:shop_smart/features/profile/presentation/profile_view.dart';
 import 'package:shop_smart/providers/theme_provider.dart';
 import 'package:short_navigation/short_navigation.dart';
 
