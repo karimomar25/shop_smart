@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shop_smart/core/consts/assets.dart';
+import 'package:shop_smart/core/funcs/my_app_functions.dart';
 import 'package:shop_smart/core/widgets/app_name_text_widget.dart';
 import 'package:shop_smart/core/widgets/subtitle_text.dart';
 import 'package:shop_smart/core/widgets/title_text.dart';
@@ -157,9 +158,15 @@ class ProfileView extends StatelessWidget {
                   ),
                 ),
               ),
-              onPressed: () {},
               icon: const Icon(Icons.login),
               label: const Text("Login"),
+              onPressed: () async {
+                await MyAppFunctions.showErrorOrWarningDialog(
+                    context: context,
+                    subtitle: "Are you sure you want to signout",
+                    fct: () {},
+                    isError: false);
+              },
             ),
           ),
         ],
