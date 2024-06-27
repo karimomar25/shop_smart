@@ -1,7 +1,7 @@
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
-import 'package:shop_smart/consts/app_constants.dart';
+import 'package:shop_smart/core/consts/app_constants.dart';
 import 'package:shop_smart/core/widgets/subtitle_text.dart';
 import 'package:shop_smart/core/widgets/title_text.dart';
 import 'package:shop_smart/features/cart/presentation/widgets/quantity_btm_sheet.dart';
@@ -54,7 +54,7 @@ class CartWidget extends StatelessWidget {
                             ),
                             IconButton(
                                 onPressed: () {},
-                                icon: HeartButtonWidget(
+                                icon: const HeartButtonWidget(
                                   size: 30,
                                 )),
                           ],

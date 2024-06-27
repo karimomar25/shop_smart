@@ -1,11 +1,7 @@
-import 'dart:developer';
 
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
-import 'package:flutter_iconly/flutter_iconly.dart';
-import 'package:shop_smart/consts/app_constants.dart';
+import 'package:shop_smart/core/consts/app_constants.dart';
 import 'package:shop_smart/core/widgets/subtitle_text.dart';
 import 'package:shop_smart/features/inner_views/product_details/product_details_view.dart';
 import 'package:shop_smart/features/inner_views/product_details/widgets/heart_btn.dart';
@@ -21,7 +17,7 @@ class LatestArrivalProductsWidget extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: GestureDetector(
         onTap: () {
-          Go.to(ProductDetailsView());
+          Go.to(const ProductDetailsView());
         },
         child: SizedBox(
           width: size.width * 0.45,
@@ -56,7 +52,7 @@ class LatestArrivalProductsWidget extends StatelessWidget {
                             onPressed: () {},
                             icon: IconButton(
                                 onPressed: () {},
-                                icon: HeartButtonWidget(
+                                icon: const HeartButtonWidget(
                                   size: 30,
                                 )),
                           ),

@@ -1,7 +1,7 @@
 import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
-import 'package:shop_smart/consts/app_constants.dart';
-import 'package:shop_smart/consts/assets.dart';
+import 'package:shop_smart/core/consts/app_constants.dart';
+import 'package:shop_smart/core/consts/assets.dart';
 import 'package:shop_smart/core/widgets/app_name_text_widget.dart';
 import 'package:shop_smart/core/widgets/title_text.dart';
 import 'package:shop_smart/features/home/presentation/widgets/ctg_rounded_widget.dart';
@@ -62,7 +62,7 @@ class HomeView extends StatelessWidget {
                   scrollDirection: Axis.horizontal,
                   itemCount: 10,
                   itemBuilder: (context, index) {
-                    return LatestArrivalProductsWidget();
+                    return const LatestArrivalProductsWidget();
                   }),
             ),
             const TitlesTextWidget(label: "Categories"),

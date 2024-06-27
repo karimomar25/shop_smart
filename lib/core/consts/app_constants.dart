@@ -1,4 +1,4 @@
-import 'package:shop_smart/consts/assets.dart';
+import 'package:shop_smart/core/consts/assets.dart';
 import 'package:shop_smart/core/models/categories_model.dart';
 
 class AppConstants {

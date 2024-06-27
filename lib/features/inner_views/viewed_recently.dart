@@ -1,33 +1,36 @@
+import 'package:dynamic_height_grid_view/dynamic_height_grid_view.dart';
 import 'package:flutter/material.dart';
 import 'package:shop_smart/core/consts/assets.dart';
+import 'package:shop_smart/core/widgets/product_widget.dart';
 import 'package:shop_smart/core/widgets/title_text.dart';
-import 'package:shop_smart/features/cart/presentation/widgets/cart_bottom_sheet_widget.dart';
-import 'package:shop_smart/features/cart/presentation/widgets/cart_widget.dart';
 import 'package:shop_smart/features/cart/presentation/widgets/empty_bag.dart';
 
-class CartView extends StatelessWidget {
-  const CartView({super.key});
+
+class ViewedRecentlyView extends StatelessWidget {
+  static const routName = "/ViewedRecentlyScreen";
+  const ViewedRecentlyView({super.key});
   final bool isEmpty = false;
   @override
   Widget build(BuildContext context) {
     return isEmpty
-        ? const Scaffold(
+        ? Scaffold(
             body: EmptyBagWidget(
-              imagePath: Assets.assetsImagesBagShoppingBasket,
-              title: "Your cart is empty",
+              imagePath: Assets.assetsImagesBagOrder,
+              title: "No viewed products yet",
               subtitle:
                   "Looks like your cart is empty add something and make me happy",
               buttonText: "Shop now",
             ),
           )
         : Scaffold(
-            bottomSheet: const CartBottomSheetWidget(),
             appBar: AppBar(
               leading: Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Image.asset(Assets.assetsImagesBagShoppingCart),
+                child: Image.asset(
+                  Assets.assetsImagesBagShoppingCart,
+                ),
               ),
-              title: const TitlesTextWidget(label: "Cart (6)"),
+              title: const TitlesTextWidget(label: "Viewed recently (6)"),
               actions: [
                 IconButton(
                   onPressed: () {},
@@ -38,11 +41,14 @@ class CartView extends StatelessWidget {
                 ),
               ],
             ),
-            body: ListView.builder(
-              itemCount: 10,
-              itemBuilder: (context, index) {
-                return const CartWidget();
+            body: DynamicHeightGridView(
+              mainAxisSpacing: 12,
+              crossAxisSpacing: 12,
+              builder: (context, index) {
+                return const ProductWidget();
               },
+              itemCount: 200,
+              crossAxisCount: 2,
             ),
           );
   }

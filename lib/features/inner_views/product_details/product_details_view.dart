@@ -1,6 +1,6 @@
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
-import 'package:shop_smart/consts/app_constants.dart';
+import 'package:shop_smart/core/consts/app_constants.dart';
 import 'package:shop_smart/core/widgets/app_name_text_widget.dart';
 import 'package:shop_smart/core/widgets/subtitle_text.dart';
 import 'package:shop_smart/core/widgets/title_text.dart';
@@ -111,9 +111,9 @@ class _ProductDetailsViewState extends State<ProductDetailsView> {
                   const SizedBox(
                     height: 20,
                   ),
-                  Row(
+                  const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: const [
+                    children: [
                       TitlesTextWidget(label: "About this item"),
                       SubtitleTextWidget(label: "In Phone"),
                     ],

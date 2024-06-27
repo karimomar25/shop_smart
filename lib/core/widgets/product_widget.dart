@@ -1,15 +1,13 @@
-import 'dart:developer';
 
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:shop_smart/core/widgets/subtitle_text.dart';
 import 'package:shop_smart/core/widgets/title_text.dart';
 import 'package:shop_smart/features/inner_views/product_details/product_details_view.dart';
 import 'package:shop_smart/features/inner_views/product_details/widgets/heart_btn.dart';
 import 'package:short_navigation/short_navigation.dart';
 
-import '../../consts/app_constants.dart';
+import '../consts/app_constants.dart';
 
 class ProductWidget extends StatefulWidget {
   const ProductWidget({super.key});
@@ -26,7 +24,7 @@ class _ProductWidgetState extends State<ProductWidget> {
       padding: const EdgeInsets.all(0.0),
       child: GestureDetector(
         onTap: () {
-          Go.to(ProductDetailsView());
+          Go.to(const ProductDetailsView());
         },
         child: Column(
           children: [
@@ -59,7 +57,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                       onPressed: () {},
                       icon: IconButton(
                           onPressed: () {},
-                          icon: HeartButtonWidget(
+                          icon: const HeartButtonWidget(
                             size: 28,
                           )),
                     ),

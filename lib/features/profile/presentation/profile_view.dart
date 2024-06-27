@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:shop_smart/consts/assets.dart';
+import 'package:shop_smart/core/consts/assets.dart';
 import 'package:shop_smart/core/widgets/app_name_text_widget.dart';
 import 'package:shop_smart/core/widgets/subtitle_text.dart';
 import 'package:shop_smart/core/widgets/title_text.dart';
+import 'package:shop_smart/features/inner_views/viewed_recently.dart';
+import 'package:shop_smart/features/inner_views/wishlist.dart';
 import 'package:shop_smart/features/profile/presentation/widgets/custom_list_tile.dart';
 import 'package:shop_smart/providers/theme_provider.dart';
+import 'package:short_navigation/short_navigation.dart';
 
 class ProfileView extends StatelessWidget {
   const ProfileView({super.key});
@@ -103,12 +106,16 @@ class ProfileView extends StatelessWidget {
                 CustomListTile(
                   text: "Wishlist",
                   imagePath: Assets.assetsImagesBagWishlistSvg,
-                  function: () {},
+                  function: () {
+                    Go.to(WishlistView());
+                  },
                 ),
                 CustomListTile(
                   text: "Viewed recently",
                   imagePath: Assets.assetsImagesProfileRecent,
-                  function: () {},
+                  function: () {
+                    Go.to(ViewedRecentlyView());
+                  },
                 ),
                 CustomListTile(
                   text: "Address",
