@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:shop_smart/core/consts/validator.dart';
+import 'package:shop_smart/core/root_view.dart';
 import 'package:shop_smart/core/widgets/app_name_text_widget.dart';
 import 'package:shop_smart/core/widgets/subtitle_text.dart';
 import 'package:shop_smart/core/widgets/title_text.dart';
+import 'package:shop_smart/features/auth/forgot_password.dart';
 import 'package:shop_smart/features/auth/register.dart';
 import 'package:shop_smart/features/auth/widgets/google_btn.dart';
 import 'package:short_navigation/short_navigation.dart';
@@ -143,7 +145,9 @@ class _LoginViewState extends State<LoginView> {
                       Align(
                         alignment: Alignment.centerRight,
                         child: TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Go.to(ForgotPasswordView());
+                          },
                           child: const SubtitleTextWidget(
                             label: "Forgot password?",
                             fontStyle: FontStyle.italic,
@@ -212,7 +216,9 @@ class _LoginViewState extends State<LoginView> {
                                     ),
                                   ),
                                   child: const Text("Guest?"),
-                                  onPressed: () async {},
+                                  onPressed: () async {
+                                    Go.to(RootView());
+                                  },
                                 ),
                               ),
                             ),

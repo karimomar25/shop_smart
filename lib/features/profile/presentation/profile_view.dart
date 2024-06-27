@@ -5,6 +5,7 @@ import 'package:shop_smart/core/funcs/my_app_functions.dart';
 import 'package:shop_smart/core/widgets/app_name_text_widget.dart';
 import 'package:shop_smart/core/widgets/subtitle_text.dart';
 import 'package:shop_smart/core/widgets/title_text.dart';
+import 'package:shop_smart/features/auth/login.dart';
 import 'package:shop_smart/features/inner_views/viewed_recently.dart';
 import 'package:shop_smart/features/inner_views/wishlist.dart';
 import 'package:shop_smart/features/profile/presentation/widgets/custom_list_tile.dart';
@@ -166,6 +167,7 @@ class ProfileView extends StatelessWidget {
                     subtitle: "Are you sure you want to signout",
                     fct: () {},
                     isError: false);
+                Go.to(LoginView());
               },
             ),
           ),
