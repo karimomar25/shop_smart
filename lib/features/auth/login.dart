@@ -47,6 +47,7 @@ class _LoginViewState extends State<LoginView> {
   }
 
   Future<void> _loginFct() async {
+    // ignore: unused_local_variable
     final isValid = _formkey.currentState!.validate();
     FocusScope.of(context).unfocus();
   }
@@ -232,7 +233,7 @@ class _LoginViewState extends State<LoginView> {
                               textDecoration: TextDecoration.underline,
                             ),
                             onPressed: () {
-                              Go.to(RegisterView());
+                              Go.to(const RegisterView());
                             },
                           ),
                         ],

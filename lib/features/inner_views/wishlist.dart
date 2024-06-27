@@ -12,7 +12,7 @@ class WishlistView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return isEmpty
-        ? Scaffold(
+        ? const Scaffold(
             body: EmptyBagWidget(
               imagePath: Assets.assetsImagesBagBagWish,
               title: "Nothing in ur wishlist yet",

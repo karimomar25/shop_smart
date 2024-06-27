@@ -13,7 +13,7 @@ class ViewedRecentlyView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return isEmpty
-        ? Scaffold(
+        ? const Scaffold(
             body: EmptyBagWidget(
               imagePath: Assets.assetsImagesBagOrder,
               title: "No viewed products yet",

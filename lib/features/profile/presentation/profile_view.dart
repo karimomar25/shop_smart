@@ -108,14 +108,14 @@ class ProfileView extends StatelessWidget {
                   text: "Wishlist",
                   imagePath: Assets.assetsImagesBagWishlistSvg,
                   function: () {
-                    Go.to(WishlistView());
+                    Go.to(const WishlistView());
                   },
                 ),
                 CustomListTile(
                   text: "Viewed recently",
                   imagePath: Assets.assetsImagesProfileRecent,
                   function: () {
-                    Go.to(ViewedRecentlyView());
+                    Go.to(const ViewedRecentlyView());
                   },
                 ),
                 CustomListTile(

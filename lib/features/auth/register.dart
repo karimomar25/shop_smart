@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:shop_smart/core/consts/validator.dart';
+import 'package:shop_smart/core/funcs/my_app_functions.dart';
 import 'package:shop_smart/core/widgets/app_name_text_widget.dart';
 import 'package:shop_smart/core/widgets/subtitle_text.dart';
 import 'package:shop_smart/core/widgets/title_text.dart';
+import 'package:shop_smart/features/auth/widgets/image_picker_widget.dart';
 
 class RegisterView extends StatefulWidget {
   static const routName = "/RegisterScreen";
@@ -26,6 +29,8 @@ class _RegisterViewState extends State<RegisterView> {
       _repeatPasswordFocusNode;
 
   final _formkey = GlobalKey<FormState>();
+  XFile? _pickedImage;
+
   @override
   void initState() {
     _nameController = TextEditingController();
@@ -57,12 +62,36 @@ class _RegisterViewState extends State<RegisterView> {
   }
 
   Future<void> _registerFCT() async {
+    // ignore: unused_local_variable
     final isValid = _formkey.currentState!.validate();
     FocusScope.of(context).unfocus();
   }
 
+  Future<void> localImagePicker() async {
+    final ImagePicker imagePicker = ImagePicker();
+
+    await MyAppFunctions.imagePickerDialog(
+      context: context,
+      cameraFUNC: () async {
+        _pickedImage = await imagePicker.pickImage(source: ImageSource.camera);
+        setState(() {});
+      },
+      galleryFUNC: () async {
+        _pickedImage = await imagePicker.pickImage(source: ImageSource.gallery);
+        setState(() {});
+      },
+      removeFUNC: () {
+        setState(() {
+          _pickedImage = null;
+        });
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
     return GestureDetector(
       onTap: () {
         FocusScope.of(context).unfocus();
@@ -91,6 +120,18 @@ class _RegisterViewState extends State<RegisterView> {
                         TitlesTextWidget(label: "Welcome back!"),
                         SubtitleTextWidget(label: "Your welcome message"),
                       ],
+                    )),
+                const SizedBox(
+                  height: 30,
+                ),
+                SizedBox(
+                    height: height * 0.17,
+                    width: width * 0.35,
+                    child: ImagePickerWidget(
+                      pickedImage: _pickedImage,
+                      function: () async {
+                        await localImagePicker();
+                      },
                     )),
                 const SizedBox(
                   height: 30,

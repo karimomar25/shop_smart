@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
           navigatorKey: Go.navigatorKey,
           theme: Styles.themeData(
               isDarkTheme: themeProvider.getIsDarkTheme, context: context),
-          home: const LoginView(),
+          home: const RootView(),
         );
       }),
     );
