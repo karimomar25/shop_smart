@@ -35,7 +35,7 @@ class _ProductWidgetState extends State<ProductWidget> {
             padding: const EdgeInsets.all(0.0),
             child: GestureDetector(
               onTap: () {
-                Go.to(const ProductDetailsView());
+                Go.toName( ProductDetailsView.routName, arguments: getCurrentProduct.productId);
               },
               child: Column(
                 children: [
