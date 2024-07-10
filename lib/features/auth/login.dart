@@ -146,7 +146,7 @@ class _LoginViewState extends State<LoginView> {
                         alignment: Alignment.centerRight,
                         child: TextButton(
                           onPressed: () {
-                            Go.to(ForgotPasswordView());
+                            Go.to(const ForgotPasswordView());
                           },
                           child: const SubtitleTextWidget(
                             label: "Forgot password?",
@@ -217,7 +217,7 @@ class _LoginViewState extends State<LoginView> {
                                   ),
                                   child: const Text("Guest?"),
                                   onPressed: () async {
-                                    Go.to(RootView());
+                                    Go.to(const RootView());
                                   },
                                 ),
                               ),

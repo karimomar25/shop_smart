@@ -167,7 +167,7 @@ class ProfileView extends StatelessWidget {
                     subtitle: "Are you sure you want to signout",
                     fct: () {},
                     isError: false);
-                Go.to(LoginView());
+                Go.to(const LoginView());
               },
             ),
           ),

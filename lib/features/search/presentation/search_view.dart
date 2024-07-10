@@ -8,6 +8,7 @@ import 'package:shop_smart/core/widgets/product_widget.dart';
 import 'package:shop_smart/core/widgets/title_text.dart';
 
 class SearchView extends StatefulWidget {
+  static const routeName = " /SearchView";
   const SearchView({super.key});
 
   @override
@@ -31,6 +32,16 @@ class _SearchViewState extends State<SearchView> {
 
   @override
   Widget build(BuildContext context) {
+    final poroductsProvider = Provider.of<ProductsProvider>(context);
+
+    // get the cat name we passed while navigation
+    String? passedCaterogy =
+        ModalRoute.of(context)!.settings.arguments as String?;
+
+    List<ProductModel> productList = passedCaterogy == null
+        ? poroductsProvider.products
+        : poroductsProvider.findProductByCaterogy(
+            caterogyName: passedCaterogy.toLowerCase());
     // create instance of our product provider
     final productsProvider = Provider.of<ProductsProvider>(context);
     return GestureDetector(
@@ -43,7 +54,7 @@ class _SearchViewState extends State<SearchView> {
             padding: const EdgeInsets.all(8.0),
             child: Image.asset(Assets.assetsImagesBagShoppingCart),
           ),
-          title: const TitlesTextWidget(label: "Search products"),
+          title: TitlesTextWidget(label: passedCaterogy ?? "Search products"),
         ),
         body: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -85,11 +96,11 @@ class _SearchViewState extends State<SearchView> {
                     builder: (context, index) {
                       return ProductWidget(
                         // give the value of the prodcutId to equal the
-                        porductId: productsProvider.getProduct[index].productId,
+                        porductId: productList[index].productId,
                       );
                     },
                     // give the length to the gridview from the products list which is in our provider
-                    itemCount: productsProvider.getProduct.length,
+                    itemCount: productList.length,
                     crossAxisCount: 2),
               ),
             ],

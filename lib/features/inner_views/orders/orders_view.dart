@@ -7,7 +7,7 @@ import 'widgets/orders_widget.dart';
 class OrdersViewFree extends StatefulWidget {
   static const routeName = '/OrderScreen';
 
-  const OrdersViewFree({Key? key}) : super(key: key);
+  const OrdersViewFree({super.key});
 
   @override
   State<OrdersViewFree> createState() => _OrdersViewFreeState();
@@ -24,7 +24,7 @@ class _OrdersViewFreeState extends State<OrdersViewFree> {
           ),
         ),
         body: isEmptyOrders
-            ? EmptyBagWidget(
+            ? const EmptyBagWidget(
                 imagePath: Assets.assetsImagesBagOrder,
                 title: "No orders has been placed yet",
                 subtitle: "",

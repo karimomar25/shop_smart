@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:shop_smart/core/models/product_model.dart';
 import 'package:uuid/uuid.dart';
@@ -27,7 +28,15 @@ class ProductsProvider with ChangeNotifier {
     );
   }
 
+// create a func to show products by its caterogy
+  List<ProductModel> findProductByCaterogy({required String caterogyName}){
+
+    List<ProductModel> caterogyList = products.where((element) => element.productCategory.toLowerCase().contains(caterogyName),).toList();
+ return caterogyList; }
+
+
   // create list for our products of tybe our products model
+
   List<ProductModel> products = [
     // Phones
     ProductModel(

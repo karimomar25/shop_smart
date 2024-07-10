@@ -5,6 +5,7 @@ import 'package:shop_smart/core/providers/products_provider.dart';
 import 'package:shop_smart/core/root_view.dart';
 import 'package:shop_smart/core/providers/theme_provider.dart';
 import 'package:shop_smart/features/inner_views/product_details/product_details_view.dart';
+import 'package:shop_smart/features/search/presentation/search_view.dart';
 import 'package:short_navigation/short_navigation.dart';
 
 void main() {
@@ -28,8 +29,9 @@ class MyApp extends StatelessWidget {
       child: Consumer<ThemeProvider>(builder: (context, themeProvider, child) {
         return MaterialApp(
           routes: {
-            ProductDetailsView.routName : (context)=> ProductDetailsView(),
-
+            SearchView.routeName: (context) => const SearchView(),
+            ProductDetailsView.routName: (context) =>
+                const ProductDetailsView(),
           },
           navigatorKey: Go.navigatorKey,
           theme: Styles.themeData(

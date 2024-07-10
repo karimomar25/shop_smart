@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:shop_smart/core/consts/assets.dart';
 import 'package:shop_smart/core/widgets/title_text.dart';
 
@@ -81,7 +80,7 @@ class MyAppFunctions {
       context: context,
       builder: (context) {
         return AlertDialog(
-          title: Center(
+          title: const Center(
             child: TitlesTextWidget(
               label: "Choose your options",
             ),
@@ -96,8 +95,8 @@ class MyAppFunctions {
                       Navigator.pop(context);
                     }
                   },
-                  label: Text("Camera"),
-                  icon: Icon(Icons.camera_alt_outlined),
+                  label: const Text("Camera"),
+                  icon: const Icon(Icons.camera_alt_outlined),
                 ),
                 TextButton.icon(
                   onPressed: () {
@@ -106,8 +105,8 @@ class MyAppFunctions {
                       Navigator.pop(context);
                     }
                   },
-                  label: Text("Gallery"),
-                  icon: Icon(Icons.image),
+                  label: const Text("Gallery"),
+                  icon: const Icon(Icons.image),
                 ),
                 TextButton.icon(
                   onPressed: () {
@@ -116,8 +115,8 @@ class MyAppFunctions {
                       Navigator.pop(context);
                     }
                   },
-                  label: Text("Remove"),
-                  icon: Icon(Icons.remove_circle_outline),
+                  label: const Text("Remove"),
+                  icon: const Icon(Icons.remove_circle_outline),
                 ),
               ],
             ),
